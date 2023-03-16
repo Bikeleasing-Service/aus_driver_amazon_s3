@@ -1,26 +1,67 @@
 {
   "name": "andersundsehr/aus-driver-amazon-s3",
   "type": "typo3-cms-extension",
-  "version": "1.5.0",
   "description": "Provides a FAL driver for the Amazon Web Service AWS S3.",
-  "homepage": "https://www.andersundsehr.com",
   "support": {
     "source": "https://github.com/andersundsehr/aus_driver_amazon_s3.git",
-    "issues": "https://forge.typo3.org/projects/extension-aus_driver_amazon_s3",
-    "docs": "https://docs.typo3.org/typo3cms/extensions/aus_driver_amazon_s3/"
+    "issues": "https://github.com/andersundsehr/aus_driver_amazon_s3/issues",
+    "docs": "https://docs.typo3.org/p/andersundsehr/aus-driver-amazon-s3/master/en-us/"
   },
-  "license": "GPL-2.0+",
+  "license": "LGPL-3.0-or-later",
   "require": {
-    "typo3/cms": "*",
-    "aws/aws-sdk-php": "^3.19"
+    "php": ">=7.2",
+    "typo3/cms-core": "^10.4.10 || ^11.5.6",
+    "aws/aws-sdk-php": "^3.218"
+  },
+  "require-dev": {
+    "pluswerk/grumphp-config": "^5.0",
+    "typo3/testing-framework": "^4.1 || ^6.2",
+    "phpspec/prophecy-phpunit": "^2.0"
   },
   "autoload": {
     "psr-4": {
       "AUS\\AusDriverAmazonS3\\": "Classes/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "AUS\\AusDriverAmazonS3\\Tests\\": "Tests/"
+    }
+  },
   "replace": {
     "typo3-ter/aus_driver_amazon_s3": "self.version",
     "typo3-ter/aus-driver-amazon-s3": "self.version"
+  },
+  "config": {
+    "vendor-dir": ".Build/vendor",
+    "bin-dir": ".Build/bin",
+    "allow-plugins": {
+      "typo3/class-alias-loader": true,
+      "typo3/cms-composer-installers": true,
+      "phpro/grumphp": true,
+      "pluswerk/grumphp-config": true
+    }
+  },
+  "scripts": {
+    "setupTest": [
+      "mkdir -p .Build/Web/typo3conf/ && ln -sfn ../../../../ .Build/Web/typo3conf/ext"
+    ],
+    "test": [
+      "@setupTest",
+      "./Build/Scripts/runTests.sh -p '8.1' -s composerInstall && ./Build/Scripts/runTests.sh -p '8.1' -s composerValidate && ./Build/Scripts/runTests.sh -p '8.1' -s unit && ./Build/Scripts/runTests.sh -p '8.1' -s lint"
+    ]
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "aus_driver_amazon_s3",
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/Web"
+    },
+    "pluswerk/grumphp-config": {
+      "auto-setting": false
+    },
+    "grumphp": {
+      "config-default-path": "grumphp.yml"
+    }
   }
 }

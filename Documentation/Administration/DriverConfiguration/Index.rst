@@ -17,11 +17,11 @@ Add the following configurations:
 
 - Region: The region of your bucket (avoid dots in the bucket name)
 
-- Key and secret key of your AWS account (see security credentials -> access keys)
+- Key and secret key of your AWS account (optional, you can also use IAM roles or environment variables)
 
 - Public base url (optional): this is the public url of your bucket, if empty its default to "bucketname.s3.amazonaws.com"
 
-- Default cache header: max-age in seconds (optional) - Please Notice: Amazon S3 set the cache header only once - while uploading / creating or copy the file.
+- Default cache header: max-age in seconds (optional) - Please Notice: AWS S3 set the cache header only once - while uploading / creating or copy the file.
 
 - Protocol: network protocol (https://, http:// or auto detection)
 

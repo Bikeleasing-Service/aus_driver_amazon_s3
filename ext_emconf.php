@@ -1,25 +1,25 @@
 <?php
 
 /** @var string $_EXTKEY */
-$EM_CONF[$_EXTKEY] = array(
-    'title' => 'anders und sehr: Amazon AWS S3 FAL driver (CDN)',
+$EM_CONF[$_EXTKEY] = [
+    'title' => 'Amazon AWS S3 FAL driver (CDN)',
     'description' => 'Provides a FAL driver for the Amazon Web Service S3.',
     'category' => 'be',
-    'version' => '1.5.0',
+    'version' => '1.12.2',
     'state' => 'stable',
     'uploadfolder' => false,
     'createDirs' => '',
     'clearcacheonload' => false,
-    'author' => 'Markus Hoelzle',
+    'author' => 'Markus Hölzle',
     'author_email' => 'typo3@markus-hoelzle.de',
-    'author_company' => 'anders und sehr GmbH',
+    'author_company' => 'different.technology',
     'constraints' =>
-        array(
+        [
             'depends' =>
-                array(
-                    'typo3' => '6.2.0-8.99.99',
-                ),
-            'conflicts' => array(),
-            'suggests' => array(),
-        ),
-);
+                [
+                    'typo3' => '10.4.0-11.5.99',
+                ],
+            'conflicts' => [],
+            'suggests' => [],
+        ],
+];

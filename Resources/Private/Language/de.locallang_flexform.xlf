@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="de" datatype="plaintext" original="messages" date="2013-05-27T14:06:47Z" product-name="aus_driver_amazon_s3">
+	<file target-language="de" datatype="plaintext" original="messages" date="2013-05-27T14:06:47Z" product-name="aus_driver_amazon_s3">
 		<header/>
 		<body>
 			<trans-unit id="driverConfiguration.region">
-				<target>Amazon S3: Region</target>
+				<target>AWS S3: Region</target>
 			</trans-unit>
 			<trans-unit id="driverConfiguration.bucket">
-				<target>Amazon S3: Bucket</target>
+				<target>AWS S3: Bucket</target>
 			</trans-unit>
 			<trans-unit id="driverConfiguration.key">
-				<target>Amazon S3: Key</target>
+				<target>AWS S3: Key</target>
 			</trans-unit>
 			<trans-unit id="driverConfiguration.secretKey">
-				<target>Amazon S3: Secret Key</target>
+				<target>AWS S3: Secret Key</target>
 			</trans-unit>
 			<trans-unit id="driverConfiguration.publicBaseUrl">
-				<target>Amazon S3: Öffentliche URL (optional)</target>
+				<target>AWS S3: Öffentliche URL (optional)</target>
 			</trans-unit>
 			<trans-unit id="driverConfiguration.cacheHeaderDuration">
 				<target>Cache Header: Max-Age (in Sekunden, optional)</target>
@@ -33,6 +33,9 @@
 			<trans-unit id="driverConfiguration.signature.auto">
 				<target>automatisch</target>
 			</trans-unit>
+			<trans-unit id="driverConfiguration.caseSensitive">
+				<target>Benutzt groß-/kleinschreibungsabhängige Bezeichner (case sensitive)</target>
+			</trans-unit>
 			<trans-unit id="driverConfiguration.message.connectionTestFailed.title">
 				<target>AWS S3 Verbindung fehlgeschlagen</target>
 			</trans-unit>
@@ -48,6 +51,9 @@
 			</trans-unit>
 			<trans-unit id="ausDriverAmazonS3.settings.doNotLoadAmazonLib">
 				<target>Amazon AWS PHP SDK nicht laden (Stellen Sie sicher, dass diese anderswo geladen wird. Im "composer mode" ist diese Einstellung wirkungslos)</target>
+			</trans-unit>
+			<trans-unit id="ausDriverAmazonS3.settings.enablePermissionsCheck">
+				<target>Prüfe Dateiberechtigungen (sehr langsam)</target>
 			</trans-unit>
 		</body>
 	</file>

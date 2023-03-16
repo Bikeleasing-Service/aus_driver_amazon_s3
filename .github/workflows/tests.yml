@@ -1,0 +1,33 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron:  '27 4 * * *'
+
+jobs:
+  testsuite:
+    name: all tests
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        php: ['8.0', '8.1']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Composer
+        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s composerInstall
+
+      - name: Composer validate
+        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s composerValidate
+
+      - name: GrumPHP
+        run: .Build/vendor/phpro/grumphp/bin/grumphp run
+
+      - name: Lint PHP
+        run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s lint
+
+      - name: Unit tests
+        run: mkdir -p .Build/Web/typo3conf/ && ln -sfn ../../../../ .Build/Web/typo3conf/ext && Build/Scripts/runTests.sh -p ${{ matrix.php }} -s unit

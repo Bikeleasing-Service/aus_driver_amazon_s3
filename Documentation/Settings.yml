@@ -4,14 +4,14 @@
 
 ---
 conf.py:
-  copyright: 2014
-  project: Amazon S3 FAL Driver
-  version: 1.0
-  release: 1.0.0
+  copyright: 2022
+  project: Amazon AWS S3 FAL driver (CDN)
+  version: 1.12
+  release: 1.12.1
   latex_documents:
   - - Index
     - aus_driver_amazon_s3.tex
-    - Amazon S3 FAL Driver
+    - AWS S3 FAL Driver
     - Markus Hölzle
     - manual
   latex_elements:

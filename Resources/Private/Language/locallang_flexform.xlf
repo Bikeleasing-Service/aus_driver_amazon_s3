@@ -4,19 +4,34 @@
 		<header/>
 		<body>
 			<trans-unit id="driverConfiguration.region">
-				<source>Amazon S3: Region</source>
+				<source>AWS S3: Region</source>
 			</trans-unit>
 			<trans-unit id="driverConfiguration.bucket">
-				<source>Amazon S3: Bucket</source>
+				<source>AWS S3: Bucket</source>
+			</trans-unit>
+			<trans-unit id="driverConfiguration.customHost">
+				<source>Custom host name</source>
+			</trans-unit>
+			<trans-unit id="driverConfiguration.customHost-description">
+				<source>For S3-compatible services like MinIO. "Region" is ignored if this is filled.</source>
+			</trans-unit>
+			<trans-unit id="driverConfiguration.pathStyleEndpoint">
+				<source>Use path-style endpoint</source>
+			</trans-unit>
+			<trans-unit id="driverConfiguration.pathStyleEndpoint-description">
+				<source>Put the bucket in the URL path and not the domain. Example: "http://s3.amazonaws.com/bucket" instead of "http://bucket.s3.amazonaws.com".</source>
 			</trans-unit>
 			<trans-unit id="driverConfiguration.key">
-				<source>Amazon S3: Key</source>
+				<source>AWS S3: Key</source>
 			</trans-unit>
 			<trans-unit id="driverConfiguration.secretKey">
-				<source>Amazon S3: Secret key</source>
+				<source>AWS S3: Secret key</source>
 			</trans-unit>
 			<trans-unit id="driverConfiguration.publicBaseUrl">
-				<source>Amazon S3: Public base URL (optional)</source>
+				<source>AWS S3: Public base URL (optional)</source>
+			</trans-unit>
+			<trans-unit id="driverConfiguration.publicBaseUrl-description">
+				<source>Without protocol - "Protocol" setting is used here.</source>
 			</trans-unit>
 			<trans-unit id="driverConfiguration.cacheHeaderDuration">
 				<source>Cache header: max age (in seconds, optional)</source>
@@ -33,6 +48,9 @@
 			<trans-unit id="driverConfiguration.signature.auto">
 				<source>auto</source>
 			</trans-unit>
+			<trans-unit id="driverConfiguration.caseSensitive">
+				<source>Case sensitive file system?</source>
+			</trans-unit>
 			<trans-unit id="driverConfiguration.message.connectionTestFailed.title">
 				<source>AWS S3 connection failed</source>
 			</trans-unit>
@@ -48,6 +66,9 @@
 			</trans-unit>
 			<trans-unit id="ausDriverAmazonS3.settings.doNotLoadAmazonLib">
 				<source>Don't load Amazon AWS PHP SDK (please make sure this is loaded elsewhere, obsolete in "composer mode")</source>
+			</trans-unit>
+			<trans-unit id="ausDriverAmazonS3.settings.enablePermissionsCheck">
+				<source>Check S3 permissions for each file and folder (very slow)</source>
 			</trans-unit>
 		</body>
 	</file>
