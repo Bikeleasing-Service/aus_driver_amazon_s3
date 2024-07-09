@@ -48,7 +48,11 @@ class MetaDataUpdateService implements SingletonInterface
 
                 $metaData['width'] = $imageDimensions[0];
                 $metaData['height'] = $imageDimensions[1];
-                $metaDataRepository->update($fileProperties['uid'], $metaData);
+                if ($metaDataRepository->findByFile($file) === []) {
+                    $metaDataRepository->createMetaDataRecord($file->getUid(), $metaData);
+                } else {
+                    $metaDataRepository->update($fileProperties['uid'], $metaData);
+                }
             }
         }
     }
